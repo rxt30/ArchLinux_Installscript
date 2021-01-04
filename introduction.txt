@@ -1,0 +1,45 @@
+1.Change layout
+Example:
+loadkeys de-latin1
+
+2.Connect to the Internet
+Ethernet should work out the box
+
+For WIFI use this three commands:
+wpa_passphrase  SSID  Passwort  > /etc/wpa_supplicant/wpa_supplicant.conf
+wpa_supplicant -i INTERFACE -D wext -c /etc/wpa_supplicant/wpa_supplicant.conf -B
+dhcpcd wlp0s1
+
+3.Make partitions
+For UEFI gdisk MUST be used.
+
+Partition 1: Boot-Partition, 512M, needs ef00 as Hex code
+Partition 2: Root-Partition, 40G+
+(Partition 3): Seperate Home-Partition, rest of aviable Space, recommend
+(Partition 4): SWAP-Partition
+
+(3.5 Map encrypted Partitions)
+
+4.Formating partitions:
+Partition 1:mkfs.fat -F 32 -n EFIBOOT 
+Partition 2:mkfs.ext4 -L p_arch
+(Partition 3):mkfs.ext4 -L p_home
+(Partition 4):mkswap -L p_swap
+
+5.Mounting
+Mount root partition:
+mount -L p_arch /mnt
+
+Mount boot partition:
+mkdir /mnt/boot
+mount -L EFIBOOT /mnt/boot
+
+Mount home partition:
+mkdir /mnt/home
+mount -L p_home /mnt/home
+
+Activate swap
+swapon -L p_swap
+
+Run the script again, with "complete" as first argument and "intel"
+as second argument when installing on a intel system
