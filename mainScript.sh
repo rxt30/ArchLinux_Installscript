@@ -26,7 +26,7 @@ fi
 
 echo "Install intel ucode? [y/n]"
 read -q installDecision
-if [ $installDecision = "y"]
+if [ $installDecision = "y" ]
 then
     pacstrap /mnt intel-ucode
 fi
@@ -35,6 +35,5 @@ echo "Generating fstab"
 genfstab -Lp /mnt > /mnt/etc/fstab
 
 echo "Starting the System"
-cp systemConfigure.sh /mnt/
-#arch-chroot /mnt /mnt/systemConfigur.sh
-arch-chroot /mnt
+cp systemConfig/ /mnt/ -r
+arch-chroot /mnt /systemConfig/configureSystem.sh

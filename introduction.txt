@@ -35,7 +35,7 @@ Partition 2:mkfs.ext4 -L p_arch
 (Partition 4):mkswap -L p_swap
 
 5.Mounting
-IMPORTANT: When mounting encrypted Partitions use "mount MAPPING_NAME MOUNTPOINT" instead of "mount -L LABEL MOUNTPOINT"
+IMPORTANT: When mounting encrypted Partitions use "mount /dev/mapper/MAPPING_NAME MOUNTPOINT" instead of "mount -L LABEL MOUNTPOINT"
 
 Mount root partition:
 mount -L p_arch /mnt
@@ -51,5 +51,4 @@ mount -L p_home /mnt/home
 Activate swap
 swapon -L p_swap
 
-Run the script again, with "complete" as first argument and "intel"
-as second argument when installing on a intel system
+Run the script again with "./mainScript.sh complete"
