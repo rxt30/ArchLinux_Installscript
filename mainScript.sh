@@ -1,7 +1,9 @@
 #/bin/zsh
-if[ $1 != "completed" ]
-    cat introduction.txt
-endif
+if [ $1 -z ]
+then
+    echo "Please read introduction.txt first"
+    exit
+fi
 
 echo "Installing base System"
 cp mirrorlist /etc/pacman.d/mirrorlist
