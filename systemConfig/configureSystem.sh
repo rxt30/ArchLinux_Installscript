@@ -1,16 +1,16 @@
 #!/bin/sh
 
 echo "-----Initializing locals-----"
-./config-Scripts/localsConfig.sh
+/systemConfig/config-Scripts/localsConfig.sh
 
 echo "-----Initializing users-----"
-./config-Scripts/userConfig.sh
+/systemConfig/config-Scripts/userConfig.sh
 
 echo "-----Initializing systemd-boot bootloader-----"
-./config-Scripts/bootloaderConfig.sh
+/systemConfig/config-Scripts/bootloaderConfig.sh
 
 echo "-----Initializing network connection-----"
-./config-Scripts/networkConfig.sh
+/systemConfig/config-Scripts/networkConfig.sh
 
 echo "-----Installing KDE-Desktop Environment-----"
-./config-Scripts/kdeConfig.sh
+/systemConfig/config-Scripts/kdeConfig.sh

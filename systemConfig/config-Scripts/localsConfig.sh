@@ -5,14 +5,14 @@ ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock --systohc
 
 echo "-----Generating locale from custom file---"
-vim ../config-Files/locale/locale.gen
-cp ../config-Files/locale/locale.gen /etc/locale.gen
+vim /systemConfig/config-Files/locale/locale.gen
+cp /systemConfig/config-Files/locale/locale.gen /etc/locale.gen
 locale-gen
 
 echo "-----Setting locale from custom file-----"
-vim ../config-Files/locale/locale.conf
-cp ../config-Files/locale/locale.conf /etc/locale.conf
+vim /systemConfig/config-Files/locale/locale.conf
+cp /systemConfig/config-Files/locale/locale.conf /etc/locale.conf
 
 echo "-----Setting keyboard layout from custom file-----"
-vim ../config-Files/locale/vconsole.conf
-cp ../config-Files/locale/vconsole.conf /etc/vconsole.conf
+vim /systemConfig/config-Files/locale/vconsole.conf
+cp /systemConfig/config-Files/locale/vconsole.conf /etc/vconsole.conf
