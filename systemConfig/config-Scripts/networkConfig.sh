@@ -1,4 +1,5 @@
 #!/bin/sh
+pacman -S dhcp
 echo "Please select a interface to use for the connection (wireless interfaces usually start with w)"
 select networkInterface in $(ip -brief link | awk '{print $1}')
 do
@@ -10,5 +11,6 @@ do
         systemctl enable netctl-auto@$networkInterface
     fi
     dhcpcd $networkInterface
+    break;
 done
 systemctl enable dhcpcd
