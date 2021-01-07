@@ -8,3 +8,9 @@ echo "-----Initializing users-----"
 
 echo "-----Initializing systemd-boot bootloader-----"
 ./config-Scripts/bootloaderConfig.sh
+
+echo "-----Initializing network connection-----"
+./config-Scripts/networkConfig.sh
+
+echo "-----Installing KDE-Desktop Environment-----"
+./config-Scripts/kdeConfig.sh
