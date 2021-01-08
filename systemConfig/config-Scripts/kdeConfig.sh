@@ -1,6 +1,6 @@
 echo "-----Installing needed services-----"
-pacman -S acvpid ntp dbus avahi cups cronie
-servicesArr = (acvpid ntp dbus avahi cups cronie)
+pacman -S acpid ntp dbus avahi cups cronie
+servicesArr=(acpid ntp dbus avahi cups cronie)
 for service in "${servicesArr[@]}"
 do
     systemctl enable $service
