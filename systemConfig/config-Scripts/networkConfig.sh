@@ -1,5 +1,5 @@
 #!/bin/sh
-pacman -S dhcp
+pacman -S dhcpcd
 echo "Please select a interface to use for the connection (wireless interfaces usually start with w)"
 select networkInterface in $(ip -brief link | awk '{print $1}')
 do

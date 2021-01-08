@@ -14,3 +14,7 @@ cp /systemConfig/config-Files/boot/arch-fallback.conf /boot/loader/entries/arch-
 vim /systemConfig/config-Files/boot/loader.conf
 cp /systemConfig/config-Files/boot/loader.conf /boot/loader/loader.conf
 bootctl update
+
+echo "-----Configure File for encrypted drives-----"
+vim /systemConfig/config-Files/crypttab
+cp /systemConfig/config-Files/crypttab /etc/crypttab

@@ -11,21 +11,21 @@ pacstrap /mnt base base-devel linux linux-firmware zsh
 pacstrap /mnt vim man-db man-pages texinfo 
 
 echo "Install tools for wireless connection? [y/n]"
-read -q installDecision
+read installDecision
 if [ $installDecision = "y" ] 
 then
     pacstrap /mnt wpa_supplicant wireless_tools netctl dialog
 fi
 
 echo "Install tools for encrypted partitions? [y/n]"
-read -q installDecision
+read installDecision
 if [ $installDecision = "y" ]
 then
     pacstrap /mnt dosfstools gptfdisk lvm2
 fi
 
 echo "Install intel ucode? [y/n]"
-read -q installDecision
+read installDecision
 if [ $installDecision = "y" ]
 then
     pacstrap /mnt intel-ucode

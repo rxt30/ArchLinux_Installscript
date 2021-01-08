@@ -1,3 +1,12 @@
+echo "-----Installing needed services-----"
+pacman -S acvpid ntp dbus avahi cups cronie
+servicesArr = (acvpid ntp dbus avahi cups cronie)
+for service in "${servicesArr[@]}"
+do
+    systemctl enable $service
+done
+
+
 echo "-----Installing xorg-----"
 pacman -S xorg-server xorg-xinit xorg-drivers
 
@@ -17,13 +26,7 @@ pacman -S git nodejs
 echo "-----Installing nerd font mono-----"
 pacman -S adobe-source-code-pro-fonts
 
-echo "-----Installing spotify-----"
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
-mkdir spotify
-cd spotify
-git clone https://aur.archlinux.org/spotify.git
-makepkg -si
-
+localectl set-x11-keymap de pc105 nodeadkeys
 echo "-----Installation has finished, to boot into a normal desktop environment simply reboot-----"
 echo "-----If you liked this Arch-Installer Script, please consider to star it on github-----"
 echo "-----If you found any issues or other improvements, please write a issue-----"

@@ -1,0 +1,7 @@
+#Only edit this file if using a non-root encrypted partition
+#
+#To unlock a device at boot time, use the following line uncommented
+#
+#MAPPING_NAME PARTITION
+
+
