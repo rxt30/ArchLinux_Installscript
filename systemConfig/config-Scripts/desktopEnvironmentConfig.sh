@@ -3,8 +3,7 @@ pacman -S acpid ntp dbus avahi cups cronie
 servicesArr=(acpid ntp dbus avahi cups cronie)
 for service in "${servicesArr[@]}"
 do
-    systemctl enable $service
-done
+    systemctl enable $service done
 
 
 echo "-----Installing xorg-----"
@@ -66,6 +65,9 @@ pacman -S git nodejs
 
 echo "-----Installing nerd font mono-----"
 pacman -S adobe-source-code-pro-fonts
+
+echo "-----Changing default layout to german layout-----"
+localectl set-x11-keymap de pc105 deadgraveacute
 
 echo "-----Installation has finished, to boot into a normal desktop environment simply reboot-----"
 echo "-----If you liked this Arch-Installer Script, please consider to star it on github-----"

@@ -12,5 +12,5 @@ echo "-----Initializing systemd-boot bootloader-----"
 echo "-----Initializing network connection-----"
 /systemConfig/config-Scripts/networkConfig.sh
 
-echo "-----Installing KDE-Desktop Environment-----"
+echo "-----Installing Desktop Environment-----"
 /systemConfig/config-Scripts/desktopEnvironmentConfig.sh

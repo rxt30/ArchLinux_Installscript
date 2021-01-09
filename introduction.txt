@@ -29,10 +29,10 @@ cryptsetup open PARTITION MAPPING_NAME
 
 
 4.Formating partitions (Non encrypted):
-Partition 1:mkfs.fat -F 32 -n EFIBOOT 
-Partition 2:mkfs.ext4 -L p_arch
-(Partition 3):mkfs.ext4 -L p_home
-(Partition 4):mkswap -L p_swap
+Partition 1:mkfs.fat -F 32 -n EFIBOOT /dev/PARTITION
+Partition 2:mkfs.ext4 -L p_arch /dev/PARTITION
+(Partition 3):mkfs.ext4 -L p_home /dev/PARTITION
+(Partition 4):mkswap -L p_swap /dev/PARTITION
 
 5.Mounting
 IMPORTANT: When mounting encrypted Partitions use "mount /dev/mapper/MAPPING_NAME MOUNTPOINT" instead of "mount -L LABEL MOUNTPOINT"
