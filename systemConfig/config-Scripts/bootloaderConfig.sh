@@ -1,20 +1,20 @@
 #!/bin/sh
 
 echo "-----Running mkinitcpio-----"
-vim /systemConfig/config-Files/boot/mkinitcpio.conf
+$EDITOR /systemConfig/config-Files/boot/mkinitcpio.conf
 cp /systemConfig/config-Files/boot/mkinitcpio.conf /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 echo "-----Installing bootloader-----"
 bootctl install
-vim /systemConfig/config-Files/boot/arch.conf
+$EDITOR /systemConfig/config-Files/boot/arch.conf
 cp /systemConfig/config-Files/boot/arch.conf /boot/loader/entries/arch.conf
-vim /systemConfig/config-Files/boot/arch-fallback.conf
+$EDITOR /systemConfig/config-Files/boot/arch-fallback.conf
 cp /systemConfig/config-Files/boot/arch-fallback.conf /boot/loader/entries/arch-fallback.conf
-vim /systemConfig/config-Files/boot/loader.conf
+$EDITOR /systemConfig/config-Files/boot/loader.conf
 cp /systemConfig/config-Files/boot/loader.conf /boot/loader/loader.conf
 bootctl update
 
 echo "-----Configure File for encrypted drives-----"
-vim /systemConfig/config-Files/crypttab
+$EDITOR /systemConfig/config-Files/crypttab
 cp /systemConfig/config-Files/crypttab /etc/crypttab

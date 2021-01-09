@@ -47,4 +47,4 @@ genfstab -Lp /mnt > /mnt/etc/fstab
 
 echo "Starting the System"
 cp systemConfig/ /mnt/ -r
-arch-chroot /mnt sh /systemConfig/configureSystem.sh
+arch-chroot /mnt sh /systemConfig/configureSystem.sh $editor

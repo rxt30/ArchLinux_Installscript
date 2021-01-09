@@ -1,4 +1,5 @@
 #!/bin/sh
+export EDITOR=$1
 
 echo "-----Initializing locals-----"
 /systemConfig/config-Scripts/localsConfig.sh
