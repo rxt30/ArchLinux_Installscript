@@ -1,4 +1,5 @@
 #!/bin/sh
+export EDITOR=$1
 
 echo "-----Initializing locals-----"
 /systemConfig/config-Scripts/localsConfig.sh
@@ -12,5 +13,5 @@ echo "-----Initializing systemd-boot bootloader-----"
 echo "-----Initializing network connection-----"
 /systemConfig/config-Scripts/networkConfig.sh
 
-echo "-----Installing KDE-Desktop Environment-----"
-/systemConfig/config-Scripts/kdeConfig.sh
+echo "-----Installing Desktop Environment-----"
+/systemConfig/config-Scripts/desktopEnvironmentConfig.sh

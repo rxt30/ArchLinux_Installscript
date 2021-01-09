@@ -6,7 +6,6 @@ then
 fi
 
 echo "Installing base System"
-cp mirrorlist /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel linux linux-firmware zsh
 pacstrap /mnt man-db man-pages texinfo 
 
@@ -47,4 +46,4 @@ genfstab -Lp /mnt > /mnt/etc/fstab
 
 echo "Starting the System"
 cp systemConfig/ /mnt/ -r
-arch-chroot /mnt sh /systemConfig/configureSystem.sh
+arch-chroot /mnt sh /systemConfig/configureSystem.sh $editor
