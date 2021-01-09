@@ -6,7 +6,6 @@ then
 fi
 
 echo "Installing base System"
-cp mirrorlist /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel linux linux-firmware zsh
 pacstrap /mnt man-db man-pages texinfo 
 
